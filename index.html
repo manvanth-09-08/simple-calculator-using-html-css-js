@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Home</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="Styles/bootstrap.min.css" />
+    <style>
+      input {
+        background-color: #f9b9c3;
+      }
+    </style>
+  </head>
+  <body style="background-color: #ffda22">
+    <div class="container">
+      <nav class="nav" style="background-color: #091e05">
+        <a class="nav-link active" aria-current="page" href="#">Active</a>
+        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="#">Disabled</a>
+      </nav>
+      <div class="row">
+        <div class="col-12">&nbsp;</div>
+      </div>
+      <div style="background-color: #004f2d; color: #d87cac">
+        <h4>This is a simple calculator built using HTML CSS and JS</h4>
+        <div class="row">
+          <div class="col-12">&nbsp;</div>
+        </div>
+        <div class="row">
+          <div class="col-5">
+            <input
+              class="form-control"
+              type="number"
+              id="txtbox1"
+              placeholder="Enter first number"
+              
+            />
+          </div>
+          <div class="col-2">
+            <select class="form-select" id="operand">
+              <option selected>+</option>
+              <option value="1">-</option>
+              <option value="2">*</option>
+              <option value="3">/</option>
+            </select>
+          </div>
+          <div class="col-5">
+            <input
+              class="form-control"
+              type="number"
+              id="txtbox2"
+              placeholder="Enter second number"
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">&nbsp;</div>
+        </div>
+        <div class="row">
+            <div class="col-5">&nbsp;</div>
+          <div class="col-2 ">
+            <button class="btn btn-dark " id="btnCalc" onclick="calculate()">
+              Calculate
+            </button>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-12">&nbsp;</div>
+      </div>
+      <div class="row">
+        <div class="col-4">&nbsp;</div>
+        <div class="col-5 align-items-center">
+            <input
+                class="form-control text-center"
+                type="text"
+                id="txtResult"
+                placeholder="Result"
+                readonly
+            />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">&nbsp;</div>
+      </div>
+    </div>
+    
+    <script>
+        function calculate()
+        {
+            var a=document.getElementById("txtbox1").value;
+            var b=document.getElementById("txtbox2").value;
+            var op=document.getElementById("operand").value;
+            switch(op)
+            {
+                case '+':
+                    var c=parseInt(a)+parseInt(b);
+                    document.getElementById("txtResult").value=c;
+                    break;
+
+                case '1':
+                    var c=parseInt(a)-parseInt(b);
+                    document.getElementById("txtResult").value=c;
+                    break;
+                case '2':
+                    var c=parseInt(a)*parseInt(b);
+                    document.getElementById("txtResult").value=c;
+                    break;
+                case '3':
+                    var c=parseInt(a)/parseInt(b);
+                    document.getElementById("txtResult").value=c;
+                    break;
+                
+                
+            }
+        }
+    </script>
+  </body>
+</html>
